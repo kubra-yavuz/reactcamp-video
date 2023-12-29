@@ -9,7 +9,7 @@ export default function ProductList() {
   useEffect(() => {
     let productService = new ProductService()
     productService.getProducts().then(result => setProducts(result.data.items))
-  })
+  },[])
 
   return (
     <div>
@@ -27,7 +27,7 @@ export default function ProductList() {
         <Table.Body>
           {
             products.map((product) => (
-              <Table.Row key={product.id}> \\Gelen ürün sayısı kadar tekrar edilir.
+              <Table.Row key={product.id}> 
                 <Table.Cell>{product.productName}</Table.Cell>
                 <Table.Cell>{product.unitPrice}</Table.Cell>
                 <Table.Cell>{product.unitsInStock}</Table.Cell>
